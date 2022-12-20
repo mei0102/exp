@@ -1,0 +1,8 @@
+#!/bin/bash
+
+python outputcsv.py
+
+python analysis.py
+
+python combine.py
+
