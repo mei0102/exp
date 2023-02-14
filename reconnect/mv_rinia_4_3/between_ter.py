@@ -34,7 +34,7 @@ while s<b:
 	    node_rec=pd.read_csv("analysis_rec/Seed{0}-Node{1}group.csv" .format(s, i+1) ,header=0, names=name)
 	    #node_col=受信量/送信量
 	    node_cal = node_rec['size'] / node_sen['size'] * 100
-	    node_merged = pd.concat([node_sen['time'],node_cal.fillna(0),node_sen,node_rec],axis=1)
+	    node_merged = pd.concat([node_sen['time'],node_cal.fillna(0),node_sen['size'],node_rec['size']],axis=1)
 	    #csvに書き出し
 	    print(node_merged)
 	    node_merged.to_csv("between_ter/Seed{0}-Node{1}.csv" .format(s, i), header=0,index=None)
